@@ -17,11 +17,12 @@ func main() {
 
 	instancConfig := emr.JobFlowInstancesConfig{
 		Ec2KeyName:                  aws.String("emr-common"),
+		Ec2SubnetId:                 aws.String("subnet-2e7e6f67"),
 		HadoopVersion:               aws.String("2.8.4"),
-		InstanceCount:               aws.Int64(2),
+		InstanceCount:               aws.Int64(1),
 		KeepJobFlowAliveWhenNoSteps: aws.Bool(true),
-		MasterInstanceType:          aws.String("m1.medium"),
-		SlaveInstanceType:           aws.String("m1.medium"),
+		MasterInstanceType:          aws.String("m4.large"),
+		SlaveInstanceType:           aws.String("m4.large"),
 		TerminationProtected:        aws.Bool(false),
 	}
 
